@@ -1,0 +1,18 @@
+:root {
+    --delivery-fee-display-color: rgba(1, 35, 56, 0.3);
+}
+
+.delivery-fee-display-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+p.delivery-fee-display {
+    color: var(--font-color);
+    font-size: 1.4rem;
+    padding: 10px 30px;
+    background-color: var(--delivery-fee-display-color);
+    box-shadow: 0 0 5px 5px var(--delivery-fee-display-color);
+    border-radius: 5px;
+}

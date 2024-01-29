@@ -1,0 +1,180 @@
+:root {
+  --box-shadow-color: rgba(1, 35, 56, 0.5);
+  --font-color: white;
+  --border-color: white;
+  --error-color: #fa5b5b;
+  --outline-input-color: rgb(202, 145, 39);
+  --submit-bttn-bg-color: #dc3f05;
+  --submit-bttn-hover-color: #ce3b06;
+  --submit-bttn-active-color: #bc3606;
+  --selected-day-bg-color: rgb(65, 116, 148);
+  --selected-day-bg-hover-color: rgb(80, 146, 187);
+  --today-day-color: rgb(247, 214, 152);
+  --today-day-hover-color: rgb(249, 232, 161);
+  --form-font-size: 15px;
+  --form-font-size-mobile: 13px;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.calculator-container {
+  width: 600px;
+  box-shadow: inset 0 0 0 50vw var(--box-shadow-color), 0 0 5px var(--box-shadow-color);
+  margin: 40px 0;
+  border-radius: 20px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+.header {
+  font-weight: 250;
+  font-size: calc(2rem + 5px);
+  color: var(--font-color);
+  text-align: center;
+  padding: 40px 0 10px 0;
+}
+
+p.error {
+  color: var(--error-color);
+  margin-bottom: -13px;
+}
+
+p::before.error {
+  display: inline;
+  content: "⚠ ";
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: var(--form-font-size);
+}
+
+#cartValue:focus,
+#deliveryDistance:focus,
+#numberOfItems:focus,
+.react-datetime-picker__inputGroup__input:focus {
+  outline-color: var(--outline-input-color);
+}
+
+#cartValue,
+#deliveryDistance,
+#numberOfItems,
+.react-datetime-picker {
+  display: block;
+}
+
+.react-datetime-picker__wrapper {
+  background-color: var(--border-color);
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  font-size: var(--form-font-size);
+  padding: 3px 0;
+}
+
+.react-calendar button.react-calendar__tile--now {
+  background-color: var(--today-day-color);
+  border-radius: 3px;
+}
+
+.react-calendar button.react-calendar__tile--now:hover {
+  background-color: var(--today-day-hover-color);
+}
+
+.react-calendar button.react-calendar__tile--active {
+  background: var(--selected-day-bg-color);
+  color: var(--font-color);
+  border-radius: 3px;
+}
+
+.react-calendar button.react-calendar__tile--active:hover {
+  background-color: var(--selected-day-bg-hover-color);
+}
+
+.react-datetime-picker__button:enabled:hover .react-datetime-picker__button__icon,
+.react-datetime-picker__button:enabled:focus .react-datetime-picker__button__icon {
+  stroke: var(--outline-input-color);
+}
+
+input[type=datetime-local] {
+  font-family: var(--font-family);
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: var(--font-color);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+
+input[type="submit"] {
+  background: var(--submit-bttn-bg-color);
+  color: var(--font-color);
+  text-transform: uppercase;
+  border: none;
+  margin: 50px 0 30px 0;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: var(--submit-bttn-hover-color);
+}
+
+input[type="submit"]:active {
+  background: var(--submit-bttn-active-color);
+}
+
+@media screen and (max-width: 600px) {
+  .calculator-container {
+    width: 100vw;
+    min-height: 100vh;
+    border-radius: 0px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  form {
+    margin: 0 20px;
+  }
+
+  header.header {
+    padding: 20% 0 5% 0;
+  }
+
+  header.header,
+  p.delivery-fee-display {
+    font-size: 22px;
+  }
+
+  label,
+  input,
+  input[type="submit"],
+  .react-datetime-picker__wrapper,
+  p.error {
+    font-size: var(--form-font-size-mobile);
+  }
+
+  .calculator-container .delivery-fee-display-wrapper {
+    padding-bottom: 0;
+  }
+}
